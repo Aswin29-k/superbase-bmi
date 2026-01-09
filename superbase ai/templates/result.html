@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <!-- BMI RESULT -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <div class="card shadow rounded-4 text-center">
+                <div class="card-header bg-success text-white fs-4 fw-bold">
+                    Your BMI Result
+                </div>
+                <div class="card-body">
+                    <h2 class="fw-bold">{{ bmi }}</h2>
+                    <span class="badge bg-warning text-dark fs-5">
+                        {{ category }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOD MENU -->
+    <h3 class="text-center fw-bold mb-4">Recommended Food Menu</h3>
+
+    <div class="row">
+        {% for item in menu %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow h-100 rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">
+                        {{ item.food_item }}
+                    </h5>
+                    <p class="text-muted">
+                        Meal Type: {{ item.meal_type }}
+                    </p>
+                    <span class="badge bg-info">
+                        Calories: {{ item.calories }} kcal
+                    </span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-outline-primary">
+            ⬅ Back
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
