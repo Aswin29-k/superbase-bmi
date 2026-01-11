@@ -3,7 +3,7 @@ from supabase import create_client
 
 app = Flask(__name__)
 
-# 🔑 SUPABASE CONFIG
+
 SUPABASE_URL = "https://rklkyvbfnurytzetfkfr.supabase.co"
 SUPABASE_KEY = "sb_secret_3Pat1CorkTamoV5hgxewXA_2GRv-_Qa"
 
@@ -12,7 +12,7 @@ if supabase:
     print("ok")
 
 
-# BMI category logic
+
 def get_bmi_category(bmi):
     if bmi < 18.5:
         return 1, "Underweight"
@@ -84,3 +84,4 @@ def calculate_bmi():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
